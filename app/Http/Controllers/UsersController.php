@@ -85,5 +85,20 @@ class UsersController extends Controller
         ]);
     }
     
+    public function favorites($id){
+         $data = [];
+        if (\Auth::check()) {
+            // 認証済みユーザ（閲覧者）を取得
+            $user = \Auth::user();
+            // ユーザとフォロー中ユーザの投稿の一覧を作成日時の降順で取得
+            $microposts = $user->favorites()->orderBy('created_at', 'desc')->paginate(10);
+
+            $data = [
+                'user' => $user,
+                'microposts' => $microposts,
+            ];
+        }
+        return view('microposts.favorite', $data);
+    }
     
 }

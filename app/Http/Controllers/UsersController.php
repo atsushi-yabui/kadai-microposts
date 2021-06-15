@@ -86,7 +86,8 @@ class UsersController extends Controller
     }
     
     public function favorites($id){
-         $data = [];
+        
+        $data = [];
         if (\Auth::check()) {
             // 認証済みユーザ（閲覧者）を取得
             $user = \Auth::user();

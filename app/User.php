@@ -208,16 +208,44 @@ class User extends Authenticatable
     }
     
     /**
-     * このユーザとフォロー中ユーザの投稿に絞り込む。
+     * ユーザー検索
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    /*public function favorite_microposts()
+    public function searchUser(Request $request)
     {
-        // このユーザがフォロー中のユーザのidを取得して配列にする
-        $userIds = $this->followings()->pluck('users.id')->toArray();
-        // このユーザのidもその配列に追加
-        $userIds[] = $this->favorites();
-        // それらのユーザが所有する投稿に絞り込む
-        return Micropost::whereIn('user_id', $userIds);
-    }*/
+        $query = $this->query();
+        if ($request->input('email')) {
+            $query->where('email', $request->input('email'));
+        }
+
+        if ($request->input('name')) {
+            $query->where('name', 'LIKE', '%' . $request->input('name') . '%');
+        }
+
+        $direction = $request->input('direction', 'desc');
+        if ($request->input('sort')) {
+            $query->orderBy($request->input('sort'), $direction);
+        } else {
+            $query->orderBy('id', $direction);
+        }
+
+        return $query->paginate();
+    }
+    
+    /**
+     * このユーザが所有するコメント。（ Commentモデルとの関係を定義）
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    
+    public function is_commenting($micropostsId)
+    {
+        // フォロー中ユーザの中に $userIdのものが存在するか
+        return $this->comments()->where('microposts_id', $micropostsId)->exists();
+    }
     
 }

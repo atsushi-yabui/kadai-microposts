@@ -10,12 +10,13 @@
                     </div>
                     <div>
                         {{-- ユーザ詳細ページへのリンク --}}
-                        <p>{!! link_to_route('users.show', 'View profile', ['user' => $user->id]) !!}</p>
+                        <p>{!! link_to_route('users.show', __('top.View'), ['user' => $user->id]) !!}</p>
                     </div>
                 </div>
             </li>
         @endforeach
     </ul>
+    @include('commons.messages')
     {{-- ページネーションのリンク --}}
     {{ $users->links() }}
 @endif

@@ -11,6 +11,7 @@
             @include('users.navtabs')
             {{-- ユーザ一覧 --}}
             @include('microposts.microposts')
+            {{-- @include('microposts.comment') --}}
         </div>
     </div>
 @endsection

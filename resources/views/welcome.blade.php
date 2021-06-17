@@ -12,6 +12,7 @@
                 @include('microposts.form')
                 {{-- 投稿一覧 --}}
                 @include('microposts.microposts')
+                @include('commons.messages')
             </div>
         </div>
     @else

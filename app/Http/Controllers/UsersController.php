@@ -94,12 +94,36 @@ class UsersController extends Controller
             // ユーザとフォロー中ユーザの投稿の一覧を作成日時の降順で取得
             $microposts = $user->favorites()->orderBy('created_at', 'desc')->paginate(10);
 
+
+            $user->loadRelationshipCounts();
+            
+            $counts = $user->favorites()->paginate(10);
+            
             $data = [
                 'user' => $user,
                 'microposts' => $microposts,
+                'counts' => $counts,
             ];
         }
         return view('microposts.favorite', $data);
+    }
+    
+    /**
+     * ユーザー検索
+     * テストコード説明用method、route、viewは未実装
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userSearch(Request $request)
+    {
+        $user = \Auth::user();
+        $users = \Auth::user()->searchUser($request);
+
+        return view('users.search', [
+            'user' => $user,
+            'users' => $users,
+        ]);
     }
     
 }

@@ -15,7 +15,7 @@
                         <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                     </div>
                     <div>
-                        {{-- フォロー／アンフォローボタン --}}
+                        {{-- フェイバリット／アンフェイバリットボタン --}}
                         @include('favorite.favorite_button')
                         @if (Auth::id() == $micropost->user_id)
                         
@@ -23,9 +23,16 @@
                             
                             {{-- 投稿削除ボタンのフォーム --}}
                             {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::submit(__('top.Delete'), ['class' => 'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
                         @endif
+                        {{-- コメントボタンのフォーム --}}
+                        {!! Form::open(['route' => 'microposts.store']) !!}
+                            <div class="form-group">
+                                {!! Form::textarea('content',"@".nl2br(e($micropost->user->name))." 「".nl2br(e($micropost->content))." 」->", ['class' => 'form-control', 'rows' => '2']) !!}
+                                {!! Form::submit(__('top.Comment'), ['class' => 'btn btn-info btn-block']) !!}
+                            </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </li>

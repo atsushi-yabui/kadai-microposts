@@ -26,9 +26,9 @@
                     </li>
                 @else
                     {{-- ユーザ登録ページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('signup.get', __('passowrd.Signup'), [], ['class' => 'nav-link']) !!}</li>
                     {{-- ログインページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('login', __('password.login'), [], ['class' => 'nav-link']) !!}</li>
                 @endif
                 
                 <li class="nav-item dropdown">

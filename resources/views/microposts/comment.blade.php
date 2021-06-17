@@ -1,0 +1,1 @@
+<input placeholder = 'コメントを入力'>

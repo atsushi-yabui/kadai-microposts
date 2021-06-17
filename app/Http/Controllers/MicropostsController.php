@@ -38,7 +38,9 @@ class MicropostsController extends Controller
         ]);
 
         // 前のURLへリダイレクトさせる
-        return back();
+        return back()->with([
+            'message' => '投稿しました。',
+        ]);
     }
     
     public function destroy($id)
@@ -52,7 +54,9 @@ class MicropostsController extends Controller
         }
 
         // 前のURLへリダイレクトさせる
-        return back();
+        return back()->with([
+            'message' => '削除しました。',
+        ]);
     }
     
     

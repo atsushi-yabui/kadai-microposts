@@ -26,8 +26,8 @@
                                 {!! Form::submit(__('top.Delete'), ['class' => 'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
                         @endif
-                        <button onclick="$('#example-5').collapse('toggle')">{{__("top.Toggle")}}</button>
-                        <div class="collapse" id="example-5">
+                        <button class = "rounded" onclick="$('#comment').collapse('toggle')">{{__("top.Toggle")}}</button>
+                        <div class="collapse" id="comment">
                             <p>
                                 {{-- コメントボタンのフォーム --}}
                                 {!! Form::open(['route' => 'microposts.store']) !!}

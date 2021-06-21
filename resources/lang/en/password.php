@@ -22,8 +22,13 @@ return [
     'Email' => 'EMail',
     'Password' => 'Password',
     'Confirmation' => 'Confirmation',
-    'login' => 'login',
-    'logout' => 'logout',
+    'login' => 'Login',
+    'logout' => 'Logout',
     'Signup' => 'Signup',
-    
+    'Signupnow' => 'Sign up now！',
+    'newuser' => 'New User?',
+    'Nameex' => 'test user',
+    'Emailex' => 'info@test.com',
+    'Passwordex' => '********',
+    'Confirmationex' => '********',
 ];

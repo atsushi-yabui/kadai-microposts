@@ -4,7 +4,7 @@ return [
     'language' => 'Language',
     'welcome' => 'Welcome to the Microposts',
     'Post' => 'Post',
-    'Comment' => 'Comment',
+    'Comment' => 'Post a comment',
     'Favorite' => 'Favorite',
     'UnFavorite' => 'Unfavorite',
     'Delete' => 'Delete',
@@ -17,5 +17,10 @@ return [
     'Favorites' => 'Favorites',
     'Users' => 'Users',
     'Microposts' => 'Microposts',
+    'Myprofile' => 'My profile',
+    'Users' => 'Users',
+    'postedat' => 'posted at',
+    'Toggle' => 'comment on a post',
+    'whatpost' => 'What will you post?',
     
 ];

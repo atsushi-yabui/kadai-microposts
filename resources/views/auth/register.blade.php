@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h1>{{__('password.Signup')}}</h1>
     </div>
 
     <div class="row">
@@ -10,26 +10,26 @@
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', __('passwords.Name')) !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('name', __('password.Name')) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control',"placeholder"=>__("password.Nameex")]) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('email', __('passwords.Email')) !!}
-                    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('email', __('password.Email')) !!}
+                    {!! Form::email('email', null, ['class' => 'form-control',"placeholder"=>__("password.Emailex")]) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', __('passwords.Password')) !!}
-                    {!! Form::password('password', ['class' => 'form-control']) !!}
+                    {!! Form::label('password', __('password.Password')) !!}
+                    {!! Form::password('password', ['class' => 'form-control',"placeholder"=>__("password.Passwordex")]) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', __('passwords.Confirmation')) !!}
-                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+                    {!! Form::label('password_confirmation', __('password.Confirmation')) !!}
+                    {!! Form::password('password_confirmation', ['class' => 'form-control',"placeholder"=>__("password.Confirmationex")]) !!}
                 </div>
 
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit(__('password.Signup'), ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>

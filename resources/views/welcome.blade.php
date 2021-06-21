@@ -20,7 +20,8 @@
             <div class="text-center">
                 <h1>{{ __('messages.welcome') }}</h1>
                 {{-- ユーザ登録ページへのリンク --}}
-                {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('signup.get', __('password.Signupnow'), [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('login', __('password.login'), [], ['class' => 'btn btn-lg btn-info']) !!}
             </div>
         </div>
     @endif

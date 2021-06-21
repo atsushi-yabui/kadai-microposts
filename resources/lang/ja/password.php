@@ -25,5 +25,10 @@ return [
     'login' => 'ログイン',
     'logout' => 'ログアウト',
     'Signup' => '新規登録',
-    
+    'Signupnow' => 'いますぐ新規登録！',
+    'newuser' => 'アカウント登録済ですか？',
+    'Nameex' => 'テスト　ユーザ',
+    'Emailex' => 'info@test.com',
+    'Passwordex' => '********',
+    'Confirmationex' => '********',
 ];

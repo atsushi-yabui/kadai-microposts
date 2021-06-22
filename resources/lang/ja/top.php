@@ -11,7 +11,7 @@ return [
     'View' => 'プロフィールを見る',
     'Follow' => 'フォロー',
     'UnFollow' => 'フォロー解除',
-    'TimeLine' => 'タイムライン',
+    'TimeLine' => 'マイタイムライン',
     'Followings' => 'フォローしている',
     'Followers' => 'フォローされている',
     'Favorites' => 'お気に入り',
@@ -22,6 +22,7 @@ return [
     'postedat' => 'ツイートされた時間',
     'Toggle' => '投稿に対してコメントする',
     'whatpost' => 'どんなことを投稿しますか？',
-    
+    'MyTimeline' => 'タイムラインに戻る',
+    'MyFavorite' =>'お気に入りを見る',
     
 ];

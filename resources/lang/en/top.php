@@ -11,7 +11,7 @@ return [
     'View' => 'View profile',
     'Follow' => 'Follow',
     'UnFollow' => 'Unfollow',
-    'TimeLine' => 'TimeLine',
+    'TimeLine' => 'My TimeLine',
     'Followings' => 'Followings',
     'Followers' => 'Followers',
     'Favorites' => 'Favorites',
@@ -22,5 +22,6 @@ return [
     'postedat' => 'posted at',
     'Toggle' => 'comment on a post',
     'whatpost' => 'What will you post?',
-    
+    'MyTimeline' => 'My Timeline',
+    'MyFavorite' =>'My Favorites',
 ];
